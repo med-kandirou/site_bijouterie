@@ -38,23 +38,22 @@ require_once 'header_user.php';
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-4">
-                        <button type="submit" class="btn btn-primary">Modifier</button>
-                    </div>            
-                </div> 
-                <div class="row">
-                    <div class="col-md-12 mt-4">
-                        <button type="submit" class="btn btn-primary">Modifier</button>
-                    </div>            
-                </div> 
-                <div class="row">
-                    <div class="col-md-12 mt-4">
-                        <button type="submit" class="btn btn-primary">Modifier</button>
+                        <button type="button" id="update" class="btn btn-primary">Modifier</button>
                     </div>            
                 </div> 
             </form>          
         </div>  
-    
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script>
+            $('#update').click(function () { 
+                var inputs=document.querySelectorAll("input");
+                for (let i = 0; i < inputs.length; i++) {
+                    inputs[i].disabled=false;               
+                }
+            });
+        </script>
 </body>
+
 <?php
-require_once 'footer_user.php';
- ?>
+    require_once 'footer_user.php';
+?>
