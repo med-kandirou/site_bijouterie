@@ -22,9 +22,15 @@
                 <li class="nav-item">
                   <a class="nav-link" href="contact_user.php"> Contact</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">profile</a>
-                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Commandes</a></li>
+                    <li><a class="dropdown-item" href="#">Pannier</a></li>
+                    <li><a class="dropdown-item" href="#">Déconnecter</a></li>
+                  </ul>
+                </li> 
               </ul>
             </div>
           </div>
