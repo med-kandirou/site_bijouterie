@@ -16,23 +16,31 @@ class user extends database {
     }
 
     public function inscrire() {
-        $sql = "INSERT INTO `user`(`nom`, `prenom`, `email`,`phone`,`password`, `role`) VALUES ('".$this->nom."','".$this->prenom."','".$this->email."','".$this->phone."','".$this->mdp."',1)";
+        $hashed_pass=password_hash($this->mdp,PASSWORD_DEFAULT);
+        $sql = "INSERT INTO `user`(`nom`, `prenom`, `email`,`phone`,`password`, `role`) VALUES ('".$this->nom."','".$this->prenom."','".$this->email."','".$this->phone."','".$hashed_pass."',1)";
         $this->openConnection()->query($sql);
         echo 1; 
     }
+
     public function login() {
-        $sql = "SELECT `id_user`, `nom`, `prenom`, `email`, `phone`, `password`, `role` FROM `user` WHERE `email`='".$this->email."' and `password` ='".$this->mdp."'";
+        $sql = "SELECT `id_user`, `nom`, `prenom`, `email`, `phone`, `password`, `role` FROM `user` WHERE `email`='".$this->email."'";
         $stmt = $this->openConnection()->query($sql);
         if($stmt->rowCount()==1){
             while ($row = $stmt->fetch()){
-                $_session['id_user']=$row['id_user'];
-                $_session['nom']=$row['nom'];
-                $_session['prenom']=$row['prenom'];
-                $_session['email']=$row['email'];
-                $_session['phone']=$row['phone'];
-                $_session['role']=$row['role'];
+                if(password_verify($this->mdp,$row["password"]))
+                {
+                    $_SESSION['id_user']=$row['id_user'];
+                    $_SESSION['nom']=$row['nom'];
+                    $_SESSION['prenom']=$row['prenom'];
+                    $_SESSION['email']=$row['email'];
+                    $_SESSION['phone']=$row['phone'];
+                    $_SESSION['role']=$row['role'];
+                    return $_SESSION['role'];
+                }
+                else{
+                    return -1; 
+                }
             }
-            return $_session['role'];
         }
         else{
             return -1; 
