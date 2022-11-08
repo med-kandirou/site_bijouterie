@@ -80,12 +80,15 @@
           <div class="nom_cat">
             <ul>
               <li id="cat"><a href="#" >Catégories :</a></li>
-              <li><a href="#">Nouveautés</a></li>
-              <li><a href="#">Tous</a></li>
-              <li><a href="#">Bagues</a></li>
-              <li><a href="#">Bracelets</a></li>
-              <li><a href="#">Bijoux de tete</a></li>
-              <li><a href="#">Les opportunités</a></li>
+              <li><a href="#" >Tous </a></li>
+              <?php
+                $db=new database();
+                $query="select * from produits";
+                $stmt=$db->openConnection()->query("SELECT * from categorie");
+                while ($row = $stmt->fetch()){
+                  echo '<li><a href="#" >'.$row['nom_cat'].'</a></li>';
+                } 
+      ?>
             </ul>
           </div>
         </div>
@@ -102,7 +105,6 @@
                     <option>Top rate</option>
                     <option>Tendance</option>
                     <option>Price</option>
-                    <option>Alphabetique</option>
                   </select>&nbsp &nbsp &nbsp
                 </div>
               </div>
