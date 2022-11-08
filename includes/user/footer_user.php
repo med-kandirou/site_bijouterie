@@ -6,14 +6,14 @@
           <div class="col-md-3">
             <div class="info_logo">
               <a href="">
-                <img src="assets/images/logo.png" alt="logo">
+                <img src="../../assets/images/logo.png" alt="logo">
               </a>
             </div>
           </div>
           <div class="col-md-3">
             <div class="info_contact">
               <a href="">
-                <img src="assets/images/location.png" alt="localisation">
+                <img src="../../assets/images/location.png" alt="localisation">
                 <span>
                   Address
                 </span>
@@ -23,7 +23,7 @@
           <div class="col-md-3">
             <div class="info_contact">
               <a href="">
-                <img src="assets/images/phone.png" alt="phone">
+                <img src="../../assets/images/phone.png" alt="phone">
                 <span>
                   +01 1234567890
                 </span>
@@ -33,7 +33,7 @@
           <div class="col-md-3">
             <div class="info_contact">
               <a href="">
-                <img src="assets/images/mail.png" alt="mail">
+                <img src="../../assets/images/mail.png" alt="mail">
                 <span>
                   demo@gmail.com
                 </span>
@@ -66,16 +66,16 @@
           </div>
           <div class="social_box">
             <a href="">
-              <img src="assets/images/fb.png" alt="facebook">
+              <img src="../../assets/images/fb.png" alt="facebook">
             </a>
             <a href="">
-              <img src="assets/images/twitter.png" alt="twitter">
+              <img src="../../assets/images/twitter.png" alt="twitter">
             </a>
             <a href="">
-              <img src="assets/images/linkedin.png" alt="linkden">
+              <img src="../../assets/images/linkedin.png" alt="linkden">
             </a>
             <a href="">
-              <img src="assets/images/insta.png" alt="instagram">
+              <img src="../../assets/images/insta.png" alt="instagram">
             </a>
           </div>
         </div>
@@ -94,7 +94,7 @@
   <!-- footer section -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script type="text/javascript" src="assets/js/custom.js"></script>
+  <script type="text/javascript" src="../../assets/js/custom.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
