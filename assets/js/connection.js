@@ -91,7 +91,7 @@ $(document).ready(function () {
                                                     'Compte a été crée !',
                                                     'success'
                                                 )      
-                                                setTimeout(function(){
+                                                setTimeout(()=>{
                                                     window.location.href="./connect.php";
                                                 },2000);    
                                             }
@@ -143,9 +143,12 @@ $(document).ready(function () {
                     else if(data==1){
                         Swal.fire(
                             'Succes!',
-                            'user!',
+                            'Bienvennue !',
                             'success'
                         )   
+                        setTimeout(()=>{
+                            window.location.href="./includes/user";
+                        },3000); 
                     }
                     else if(data==2){
                         Swal.fire(
@@ -153,6 +156,7 @@ $(document).ready(function () {
                             'admin !',
                             'success'
                         )  
+                            
                     }                  
                 },
             )
