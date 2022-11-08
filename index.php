@@ -249,7 +249,7 @@
               veniam, quis nostrud
             </p>
             <div>
-              <a href="">
+              <a href="about.php">
                 Read More
               </a>
             </div>
