@@ -38,7 +38,7 @@
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand" href="index.php">
             <img src="./assets/images/logo.png" alt="logo de site">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,7 +88,7 @@
                 while ($row = $stmt->fetch()){
                   echo '<li><a href="#" >'.$row['nom_cat'].'</a></li>';
                 } 
-      ?>
+              ?>
             </ul>
           </div>
         </div>
@@ -111,7 +111,6 @@
 
             </div>
           </div>
-          
           <!-- row 1 -->
           <div class="row">
             <div class="col-md-3">
