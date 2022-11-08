@@ -1,3 +1,7 @@
+
+<?php
+require_once '../classes/config.php';
+ ?>
 <!DOCTYPE html>
 <html>
 
