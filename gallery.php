@@ -1,3 +1,6 @@
+<?php
+  require_once 'includes/classes/config.php';
+ ?>
 <!DOCTYPE html>
 <html>
 
