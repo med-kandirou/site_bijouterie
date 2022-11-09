@@ -50,13 +50,17 @@ require_once 'header_user.php';
                         <?php
                         if(isset($_GET['etat'])){
                             if($_GET['etat']=='succes'){
-                                echo '  <div class="alert alert-success alert-dismissible">
-                                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                <strong>Success!</strong> Les informations sont modifiée avec succes
-                              </div>';
+                                echo"
+                                    <script>
+                                        Swal.fire(
+                                        'Good job!',
+                                        'You clicked the button!',
+                                        'success') 
+                                    </script>
+                                ";
+                                
                             } 
                         }
-
                         ?>
                     </div>         
                 </div> 
