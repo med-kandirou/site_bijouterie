@@ -28,7 +28,7 @@
                     <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                     <li><a class="dropdown-item" href="#">Commandes</a></li>
                     <li><a class="dropdown-item" href="#">Pannier</a></li>
-                    <li><a class="dropdown-item" href="#">Déconnecter</a></li>
+                    <li><a class="dropdown-item" href="deconnecter.php">Déconnecter</a></li>
                   </ul>
                 </li> 
               </ul>

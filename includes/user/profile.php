@@ -44,7 +44,7 @@ require_once 'header_user.php';
                         <button type="submit" class="btn btn-primary form-control">Enregistrer</button>
                     </div>  
                     <div class="col-md-12 mt-4">
-                        <a href="#"><button type="button" id="update_mdp" class="btn btn-dark form-control">Changer le mot se passe </button></a>
+                        <button type="button" id="show_mdp" class="btn btn-dark form-control">Changer le mot se passe </button>
                     </div> 
                     <div class="col-md-12 mt-4">
                         <?php
@@ -54,16 +54,32 @@ require_once 'header_user.php';
                                     <script>
                                         Swal.fire(
                                         'Good job!',
-                                        'You clicked the button!',
+                                        'les informations modifiée avec succés!',
                                         'success') 
                                     </script>
                                 ";
-                                
                             } 
                         }
                         ?>
                     </div>         
                 </div> 
+                <div class="row mdp_div " style="display: none;">
+                    <div class="col-md-12 mt-4">
+                        <label class="form-label">Mot de passe:</label>
+                        <input type="text" class="form-control" name="tele" required >
+                    </div>   
+                    <div class="col-md-12 mt-4">
+                        <label class="form-label">Nouveau mot de passe :</label>
+                        <input type="text" class="form-control" name="tele" required >
+                    </div>
+                    <div class="col-md-12 mt-4">
+                        <label class="form-label">Confirmation de mot de passe :</label>
+                        <input type="text" class="form-control" name="tele" required >
+                    </div>  
+                    <div class="col-md-12 mt-4">
+                        <a href="#"><button type="button" id="update_mdp" class="btn btn-dark form-control">Changer</button></a>
+                    </div>        
+                </div>
             </form>          
         </div>  
         
