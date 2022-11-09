@@ -49,5 +49,23 @@ class user extends database {
             return -1; 
         }
     }
+    public function update_info($nom,$prenom,$email,$phone,$id) {
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->email = $email;
+        $this->phone = $phone;
+        $sql = "UPDATE `user` SET `nom`='".$nom."',`prenom`='".$prenom."',`email`='".$email."',`phone`='".$phone."' WHERE `id_user`='".$id."'";
+        if($this->openConnection()->query($sql)){
+            $_SESSION['nom']=$nom;
+            $_SESSION['prenom']=$prenom;
+            $_SESSION['email']=$email;
+            $_SESSION['phone']=$phone;
+            header("Location:../user/profile.php?etat=succes");
+            exit();
+
+
+        }
+  
+    }
 }
 ?>
