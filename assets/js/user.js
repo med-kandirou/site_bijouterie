@@ -8,5 +8,11 @@ $('#update').click(function () {
 
 
 $('#show_mdp').click(function () { 
-    $(".mdp_div").addClass('toggle');
+    var div=document.querySelector(".mdp_div");
+    if(div.style.display=='none'){
+        div.style.display='block';
+    }
+    else{
+        div.style.display='none';
+    }
 });
