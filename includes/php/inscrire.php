@@ -8,8 +8,8 @@ $phone=secure($_POST["phone"]);
 $mdp=secure($_POST["mdp"]);
 
 try{
-    $p=new user($nom,$prenom,$email,$phone,$mdp);
-    $p->inscrire();
+    $p=new user();
+    $p->inscrire($nom,$prenom,$email,$phone,$mdp);
 }
 catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

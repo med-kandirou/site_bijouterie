@@ -83,7 +83,7 @@ $(document).ready(function () {
                             }).then((response)=>{
                                code=response.value;
                                 if(code==data){
-                                    $.post("./includes/php/verification.php",{nom:$("#nom").val(),prenom:$("#prenom").val(),email:$("#email").val(),phone:$("#phone").val(),mdp:$("#mdp").val()},
+                                    $.post("./includes/php/inscrire.php",{nom:$("#nom").val(),prenom:$("#prenom").val(),email:$("#email").val(),phone:$("#phone").val(),mdp:$("#mdp").val()},
                                         function (response) {
                                             if(response==1){
                                                 Swal.fire(

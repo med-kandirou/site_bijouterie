@@ -17,41 +17,39 @@ require_once 'header_user.php';
                 <div class="row">
                     <div class="col-md-6 mt-2">
                         <label for="email" class="form-label">Nom :</label>
-                        <input type="email" class="form-control" name="nom" value="<?php echo $_SESSION['nom']; ?>" disabled>
+                        <input type="email" class="form-control" required name="nom" value="<?php echo $_SESSION['nom']; ?>" disabled>
                     </div>        
                     <div class="col-md-6 mt-2">
                         <label for="email" class="form-label">Prenom:</label>
-                        <input type="email" class="form-control" name="prenom" value="<?php echo $_SESSION['prenom']; ?>" disabled>
+                        <input type="email" class="form-control" name="prenom" required value="<?php echo $_SESSION['prenom']; ?>" disabled>
                     </div>  
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-4">
                         <label class="form-label">Email:</label>
-                        <input type="email" class="form-control" name="email" value="<?php echo $_SESSION['email']; ?>" disabled>
+                        <input type="email" class="form-control" name="email" required value="<?php echo $_SESSION['email']; ?>" disabled>
                     </div>   
                 </div>
                 <div class="row">
                     <div class="col-md-12 mt-4">
                         <label class="form-label">Telephone:</label>
-                        <input type="email" class="form-control" name="tele" value="<?php echo $_SESSION['phone']; ?>" disabled>
+                        <input type="email" class="form-control" name="tele" required value="<?php echo $_SESSION['phone']; ?>" disabled>
                     </div>            
                 </div>
-                <div class="row">
+                <div class="row ">
+                    <div class="col-md-6 mt-4">
+                        <button type="button" id="update" class="btn btn-info form-control">Modifier</button>
+                    </div>     
+                    <div class="col-md-6 mt-4">
+                        <button type="button" id="save" class="btn btn-primary form-control">Enregistrer</button>
+                    </div>  
                     <div class="col-md-12 mt-4">
-                        <button type="button" id="update" class="btn btn-primary">Modifier</button>
-                    </div>            
+                        <a href="#"><button type="button" id="update_mdp" class="btn btn-dark form-control">Changer le mot se passe </button></a>
+                    </div>         
                 </div> 
             </form>          
         </div>  
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script>
-            $('#update').click(function () { 
-                var inputs=document.querySelectorAll("input");
-                for (let i = 0; i < inputs.length; i++) {
-                    inputs[i].disabled=false;               
-                }
-            });
-        </script>
+        
 </body>
 
 <?php
