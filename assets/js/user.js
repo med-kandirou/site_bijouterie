@@ -5,7 +5,7 @@ $('#update').click(function () {
         inputs[i].disabled=false;               
     }
 });
-
+//show div mdp
 $('#show_mdp').click(function () { 
     var div=document.querySelector(".mdp_div");
     if(div.style.display=='none'){
@@ -15,7 +15,7 @@ $('#show_mdp').click(function () {
         div.style.display='none';
     }
 });
-
+//controllle user
 $(".alert-danger").hide();
 $("#update_mdp").click(function () { 
     if($("#old_mdp").val()=='' || $("#new_mdp").val()=='' || $("#Cnew_mdp").val()==''){

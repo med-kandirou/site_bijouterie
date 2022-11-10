@@ -148,7 +148,7 @@ $(document).ready(function () {
                         )   
                         setTimeout(()=>{
                             window.location.href="./includes/user";
-                        },3000); 
+                        },1700); 
                     }
                     else if(data==2){
                         Swal.fire(

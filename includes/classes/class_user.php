@@ -7,8 +7,7 @@ class user extends database {
     public $phone;
     public $mdp;
 
-    function __construct() {
-    }
+    function __construct() {}
 
     public function inscrire($nom,$prenom,$email,$phone,$mdp) {
         $this->nom = $nom;
@@ -63,13 +62,9 @@ class user extends database {
             $_SESSION['phone']=$phone;
             header("Location:../user/profile.php?etat=succes");
             exit();
-
-
         }
-  
     }
     public function update_mdp($mdp,$newmdp) {
-
         $this->mdp = $mdp;
         if(password_verify($this->mdp,$_SESSION['pass']))
         {
