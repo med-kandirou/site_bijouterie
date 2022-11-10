@@ -206,7 +206,7 @@
         $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `image` FROM `produit` ORDER BY prix LIMIT 3");
         while ($row = $stmt->fetch()){
           echo '
-          <div class="box">
+          <div class="box" num="'.$row['id_produit'].'">
           <div class="price">
             <h6>
               Meilleur prix
@@ -283,7 +283,7 @@
         $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`,`prix`, `image` FROM `produit` ORDER BY prix desc LIMIT 3");
         while ($row = $stmt->fetch()){
           echo '
-          <div class="box" id="'.$row['id_produit'].'">
+          <div class="box" num="'.$row['id_produit'].'">
           <div class="name">
             <h6>
               '.$row['nom_prod'].'
@@ -305,9 +305,7 @@
       ?>
       
   </section>
-
   <!-- end price section -->
-
   <!-- ring section -->
 
   <section class="ring_section layout_padding">

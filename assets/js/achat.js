@@ -1,6 +1,7 @@
 var boxs=document.querySelectorAll(".box");
 boxs.forEach((box)=>{
-    box.addEventListener('click',function(e){
-        alert(e.target.id);
+    box.addEventListener('click',function(){
+        var num=box.getAttribute('num');
+        alert(num);
     })
 })
