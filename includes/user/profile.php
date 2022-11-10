@@ -66,19 +66,25 @@ require_once 'header_user.php';
                 <div class="row mdp_div " style="display: none;">
                     <div class="col-md-12 mt-4">
                         <label class="form-label">Mot de passe:</label>
-                        <input type="text" class="form-control" name="tele">
+                        <input type="password" class="form-control" id="old_mdp">
                     </div>   
                     <div class="col-md-12 mt-4">
                         <label class="form-label">Nouveau mot de passe :</label>
-                        <input type="text" class="form-control" name="tele">
+                        <input type="password" class="form-control" id="new_mdp" >
                     </div>
                     <div class="col-md-12 mt-4">
                         <label class="form-label">Confirmation de mot de passe :</label>
-                        <input type="text" class="form-control" name="tele">
+                        <input type="password" class="form-control" id="Cnew_mdp">
                     </div>  
                     <div class="col-md-12 mt-4">
-                        <a href="#"><button type="button" id="update_mdp" class="btn btn-danger form-control">Changer</button></a>
-                    </div>        
+                        <button type="button" id="update_mdp" class="btn btn-danger form-control">Changer</button>
+                    </div> 
+                    <div class="col-md-12 mt-4">
+                        <div class="alert alert-danger" role="alert">
+                            
+                        </div>  
+                    </div>
+                         
                 </div>
             </form>          
         </div>  

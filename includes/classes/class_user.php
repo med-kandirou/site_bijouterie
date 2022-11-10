@@ -38,6 +38,7 @@ class user extends database {
                     $_SESSION['email']=$row['email'];
                     $_SESSION['phone']=$row['phone'];
                     $_SESSION['role']=$row['role'];
+                    $_SESSION['pass']=$row['password'];
                     return $_SESSION['role'];
                 }
                 else{
@@ -66,6 +67,22 @@ class user extends database {
 
         }
   
+    }
+    public function update_mdp($mdp,$newmdp) {
+
+        $this->mdp = $mdp;
+        if(password_verify($this->mdp,$_SESSION['pass']))
+        {
+            $hashed_pass=password_hash($newmdp,PASSWORD_DEFAULT);
+            $sql = "UPDATE `user` SET `password`='".$hashed_pass."' WHERE  `id_user`='".$_SESSION['id_user']."'";
+            if($this->openConnection()->query($sql)){
+                $_SESSION['pass']=$hashed_pass;
+                echo 1;
+            }  
+        }
+        else{
+            echo -1;
+        }  
     }
 }
 ?>
