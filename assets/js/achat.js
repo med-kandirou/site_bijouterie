@@ -1,6 +1,6 @@
-var box=document.querySelectorAll(".box");
-box.forEach((box)=>{
-    box.addEventListener('click',function(){
-        alert("clicked");
-    });
+var boxs=document.querySelectorAll(".box");
+boxs.forEach((box)=>{
+    box.addEventListener('click',function(e){
+        alert(e.target.id);
+    })
 })

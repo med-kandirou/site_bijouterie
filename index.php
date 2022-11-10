@@ -283,7 +283,7 @@
         $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`,`prix`, `image` FROM `produit` ORDER BY prix desc LIMIT 3");
         while ($row = $stmt->fetch()){
           echo '
-          <div class="box">
+          <div class="box" id="'.$row['id_produit'].'">
           <div class="name">
             <h6>
               '.$row['nom_prod'].'
@@ -303,13 +303,7 @@
         </div>';
       }
       ?>
-      </div>
-      <div class="d-flex justify-content-center">
-        <a href="gallery.php" class="price_btn">
-          See More
-        </a>
-      </div>
-    </div>
+      
   </section>
 
   <!-- end price section -->
