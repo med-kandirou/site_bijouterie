@@ -199,7 +199,6 @@
   <div class="item_section layout_padding2">
     <div class="container">
       <div class="item_container">
-
       <?php
         $db=new database();
         $query="select * from produits";
