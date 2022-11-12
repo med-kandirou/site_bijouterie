@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 04 nov. 2022 à 23:13
--- Version du serveur : 10.4.25-MariaDB
--- Version de PHP : 7.4.30
+-- Généré le : sam. 12 nov. 2022 à 11:51
+-- Version du serveur : 10.4.24-MariaDB
+-- Version de PHP : 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,6 +31,14 @@ CREATE TABLE `categorie` (
   `id_cat` int(11) NOT NULL,
   `nom_cat` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`id_cat`, `nom_cat`) VALUES
+(1, 'bracelet'),
+(2, 'ring');
 
 -- --------------------------------------------------------
 
@@ -74,8 +82,22 @@ CREATE TABLE `produit` (
   `description` longtext NOT NULL,
   `image` varchar(50) NOT NULL,
   `quantité_stock` int(11) NOT NULL,
+  `rate` int(11) NOT NULL,
+  `nbr_vendre` int(11) NOT NULL,
   `id_cat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `produit`
+--
+
+INSERT INTO `produit` (`id_produit`, `nom_prod`, `prix`, `description`, `image`, `quantité_stock`, `rate`, `nbr_vendre`, `id_cat`) VALUES
+(14, 'bracelet', 100, 'LOREM', 'i-3.png', 50, 5, 3, 1),
+(15, 'bracelet 2', 100, 'LOREM', 'i-2.png', 50, 5, 3, 1),
+(16, 'bracelet 3', 100, 'LOREM', 'i-1.png', 50, 5, 3, 1),
+(17, 'bracelet 4', 300, 'LOREM', 'i-1.png', 50, 5, 3, 1),
+(18, 'bracelet 5', 500, 'LOREM', 'i-3.png', 50, 5, 3, 1),
+(19, 'bracelet 6', 600, 'LOREM', 'i-1.png', 50, 5, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -98,9 +120,10 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nom`, `prenom`, `email`, `phone`, `password`, `role`) VALUES
-(28, 'YASSINE', 'hjhj', 'mohammed.taza19@gmail.com', '0639872239', 'SIMOKN123@', 1),
 (29, 'dd', 'dd', 'sidatnouhi@gmail.com', '0639872239', 'SIMOKN123@', 1),
-(30, 'alae', 'el oula', 'alaaeloula@gmail.com', '0639872239', 'SIMOKN123@', 1);
+(30, 'alae', 'el oula', 'alaaeloula@gmail.com', '0639872239', 'SIMOKN123@', 1),
+(31, 'KANDIROU', 'KANDIROU2', 'simo.kandirou15@gmail.com', '0639872239', '$2y$10$Z6ePIIqNbHs1Yy1P9At3Se4DoMVwO4j6K9cuWwX7xjVYqLWJQstPC', 1),
+(32, 'simo', 'simoxxxxx', 'test.tazafghfghfg19@gmail.com', '0639872239', '$2y$10$MpnFAXQ2i1Wbhy.RSAf3iesHWxJSqYiPfyeDZ9RHrO6ghQ60zFtwC', 1);
 
 --
 -- Index pour les tables déchargées
@@ -160,13 +183,13 @@ ALTER TABLE `commande`
 -- AUTO_INCREMENT pour la table `produit`
 --
 ALTER TABLE `produit`
-  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_produit` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Contraintes pour les tables déchargées
