@@ -155,6 +155,10 @@ margin-bottom: 6%;
 }
 
 /* page achat */
+
+.fiche{
+    margin-bottom: 150px;
+}
 .title-comp{
     color: #F9B233;
     letter-spacing: 4px;
@@ -175,4 +179,13 @@ margin-bottom: 6%;
     color: white;
     padding: 5px 40px 5px 40px;
     border-radius: 7px;
+}
+.qt{
+    width: 50px;
+    background-color: white;
+    border-radius: 8px; 
+}
+.nbr-qt{
+    display: block;
+    margin: auto;
 }

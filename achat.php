@@ -69,7 +69,7 @@
   </div>
 
   <h2 id="title">Fiche de produit</h2>
-  <div class="container">
+  <div class="container fiche">
     <div class="row">
         <div class="col-md-6">
             <div class="row">
@@ -95,13 +95,14 @@
             <div class="row prix-prod">
                 $200.00
             </div>
+            <div class="row title-comp">
+                <p>Quantité :</p>
+            </div>
             <div class="row">
-              <img src="assets/images/icon-minus.svg" width="10" height="8" alt="min"> <input type="number" disabled><img src="assets/images/icon-plus.svg" width="10" height="20" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
+              <img src="assets/images/icon-minus.svg" class="nbr-qt" width="20" height="8" alt="min">&nbsp;<input type="number" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
             </div>
         </div>
-
     </div>
-    
   </div>
 
   <!-- info section -->
