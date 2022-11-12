@@ -96,17 +96,13 @@
                 $200.00
             </div>
             <div class="row">
-              <img src="assets/images/icon-minus.svg" width="10" height="20" alt="min"> <input type="number" disabled><img src="assets/images/icon-plus.svg" width="10" height="20" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
+              <img src="assets/images/icon-minus.svg" width="10" height="8" alt="min"> <input type="number" disabled><img src="assets/images/icon-plus.svg" width="10" height="20" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
             </div>
         </div>
 
     </div>
     
   </div>
-
-
-
-
 
   <!-- info section -->
   <section class="info_section ">
