@@ -153,3 +153,26 @@ margin-bottom: 6%;
 .toggle{
     display: block;
 }
+
+/* page achat */
+.title-comp{
+    color: #F9B233;
+    letter-spacing: 4px;
+}
+.title-prod,.prix-prod{
+    color: #000000;
+    font-weight: bold;
+    font-size: 25px;
+}
+.desc-prod{
+    color: grey;
+    text-align: justify;
+    line-height:2em;
+}
+.btn_pannier{
+    background-color: #F9B233;
+    text-decoration: none;
+    color: white;
+    padding: 5px 40px 5px 40px;
+    border-radius: 7px;
+}

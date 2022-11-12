@@ -83,20 +83,20 @@
         </div>
 
         <div class="col-md-6">
-            <div class="row">
-                <p>dhayby</p>
+            <div class="row title-comp">
+                <p>DHAYBY COMPANY</p>
+            </div>
+            <div class="row title-prod">
+                <p>Fall Limited Edition Sneackers</p>
+            </div>
+            <div class="row desc-prod">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione praesentium numquam repellendus, id cum eos incidunt ducimus! Ullamssdfdssfffffffsrfeztretretretertretretretretret</p>
+            </div>
+            <div class="row prix-prod">
+                $200.00
             </div>
             <div class="row">
-                <p>title</p>
-            </div>
-            <div class="row">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione praesentium numquam repellendus, id cum eos incidunt ducimus! Ullam qui incidunt recusandae omnis exercitationem ad libero amet velit unde. Reprehenderit?</p>
-            </div>
-            <div class="row">
-                prix
-            </div>
-            <div class="row">
-                <input type="number"> <input type="button" value="ajoutee au pannier">
+              <img src="assets/images/icon-minus.svg" width="10" height="20" alt="min"> <input type="number" disabled><img src="assets/images/icon-plus.svg" width="10" height="20" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
             </div>
         </div>
 
