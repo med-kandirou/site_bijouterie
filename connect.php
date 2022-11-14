@@ -84,6 +84,9 @@ require_once 'header.php';
   </div>
 </section>
   <!-- info section -->
-  <?php
+
+<?php
 require_once 'footer.php';
+
  ?>
+ <script type="text/javascript" src="assets/js/connection.js"></script>

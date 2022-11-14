@@ -1,3 +1,14 @@
+<?php 
+  require_once 'includes/classes/config.php';
+  if (isset($_SESSION['id_user'])==false)
+  {
+    echo 'the session is empty';
+  }
+  else{
+    echo $_SESSION['id_user'];
+  }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +23,10 @@
   <meta name="author" content="mohamed kandirou"/>
 
   <title>Lodge</title>
-
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
-
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" />
-
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan|Poppins:400,600,700&display=swap" rel="stylesheet">
   <!-- Custom styles for this template -->
