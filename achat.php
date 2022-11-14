@@ -2,6 +2,19 @@
   require_once 'includes/classes/config.php';
   if(isset($_GET['id'])==true)
   {
+    $id=$_GET['id'];
+    $db=new database();
+    $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `prix`, `description`, `image`, `image1`, `image2`,`nbr_vente`, `id_cat` FROM `produit` WHERE `id_produit`=".$id."");
+    while ($row = $stmt->fetch())
+    {
+      $nom=$row['nom_prod'];
+      $prix=$row['prix'];
+      $desc=$row['description'];
+      $image=$row['image'];
+      $image1=$row['image1'];
+      $image2=$row['image2'];
+      $nbr_vente=$row['nbr_vente'];
+    }
     if (isset($_SESSION['id_user'])==false)
     {
       require_once 'header.php';
@@ -43,20 +56,19 @@
         </div>
       </header>
     </div>
-  
     <h2 id="title">Fiche de produit</h2>
     <div class="container fiche">
       <div class="row">
           <div class="col-md-6">
               <div class="row">
                   <div class="col-md-10">
-                    <img src="assets/images/i-1.png" style="display: block;margin:auto;">
+                    <img src="assets/images/'.$image.'" style="display: block;margin:auto;">
                   </div> 
               </div>
               <div class="row">
-                  <img src="assets/images/i-1.png" class="col-md-3 img">
-                  <img src="assets/images/i-1.png" class="col-md-3 img">
-                  <img src="assets/images/i-1.png" class="col-md-3 img">  
+                  <img src="assets/images/'.$image.'" class="col-md-3 img">
+                  <img src="assets/images/'.$image1.'" class="col-md-3 img">
+                  <img src="assets/images/'.$image2.'" class="col-md-3 img">  
               </div>
           </div>
           <div class="col-md-6">
@@ -64,16 +76,22 @@
                   <p>DHAYBY COMPANY</p>
               </div>
               <div class="row title-prod">
-                  <p>Fall Limited Edition Sneackers</p>
+                  <p>'.$nom.'</p>
               </div>
               <div class="row desc-prod">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione praesentium numquam repellendus, id cum eos incidunt ducimus! Ullamssdfdssfffffffsrfeztretretretertretretretretret</p>
+                  <p>'.$desc.'</p>
               </div>
               <div class="row prix-prod">
-                  $200.00
+                  $'.$prix.'
               </div>
               <div class="row title-comp">
-                  <p>Quantité :</p>
+                  <p>Nombre des ventes :'.$nbr_vente.'</p>
+              </div>
+              <div class="row title-comp">
+                <p>Quantité de stock :'.$quantité_stock.'</p>
+              </div>
+              <div class="row title-comp">
+                <p>Quantité :</p>
               </div>
               <div class="row">
                 <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
@@ -83,7 +101,6 @@
     </div>
   ';
     require_once "footer.php";
-  
     }
     else
     {
@@ -139,13 +156,13 @@
           <div class="col-md-6">
               <div class="row">
                   <div class="col-md-10">
-                    <img src="assets/images/i-1.png" style="display: block;margin:auto;">
+                    <img src="assets/images/'.$image.'" style="display: block;margin:auto;">
                   </div> 
               </div>
               <div class="row">
-                  <img src="assets/images/i-2.png" class="col-md-3 img">
-                  <img src="assets/images/i-2.png" class="col-md-3 img">
-                  <img src="assets/images/i-2.png" class="col-md-3 img">  
+              <img src="assets/images/'.$image.'" class="col-md-3 img">
+              <img src="assets/images/'.$image1.'" class="col-md-3 img">
+              <img src="assets/images/'.$image2.'" class="col-md-3 img">  
               </div>
           </div>
           <div class="col-md-6">
@@ -153,13 +170,13 @@
                   <p>DHAYBY COMPANY</p>
               </div>
               <div class="row title-prod">
-                  <p>Fall Limited Edition Sneackers</p>
+                  <p>'.$nom.'</p>
               </div>
               <div class="row desc-prod">
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ratione praesentium numquam repellendus, id cum eos incidunt ducimus! Ullamssdfdssfffffffsrfeztretretretertretretretretret</p>
+                  <p>'.$desc.'</p>
               </div>
               <div class="row prix-prod">
-                  $200.00
+                  $'.$prix.'
               </div>
               <div class="row title-comp">
                   <p>Quantité :</p>
