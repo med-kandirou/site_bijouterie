@@ -88,9 +88,6 @@
                   <p>Nombre des ventes :'.$nbr_vente.'</p>
               </div>
               <div class="row title-comp">
-                <p>Quantité de stock :'.$quantité_stock.'</p>
-              </div>
-              <div class="row title-comp">
                 <p>Quantité :</p>
               </div>
               <div class="row">
