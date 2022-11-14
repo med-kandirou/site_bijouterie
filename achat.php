@@ -4,7 +4,7 @@
   {
     $id=$_GET['id'];
     $db=new database();
-    $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `prix`, `description`, `image`, `image1`, `image2`,`nbr_vente`, `id_cat` FROM `produit` WHERE `id_produit`=".$id."");
+    $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `prix`, `description`, `image`, `image1`, `image2`,`nbr_vente` FROM `produit` WHERE `id_produit`=".$id."");
     while ($row = $stmt->fetch())
     {
       $nom=$row['nom_prod'];
@@ -65,7 +65,7 @@
                     <img src="assets/images/'.$image.'" style="display: block;margin:auto;">
                   </div> 
               </div>
-              <div class="row">
+              <div class="row mt-5">
                   <img src="assets/images/'.$image.'" class="col-md-3 img">
                   <img src="assets/images/'.$image1.'" class="col-md-3 img">
                   <img src="assets/images/'.$image2.'" class="col-md-3 img">  
@@ -91,7 +91,7 @@
                 <p>Quantité :</p>
               </div>
               <div class="row">
-                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
+                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier"><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
               </div>
           </div>
       </div>
@@ -162,7 +162,7 @@
               <img src="assets/images/'.$image2.'" class="col-md-3 img">  
               </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 mt-5">
               <div class="row title-comp">
                   <p>DHAYBY COMPANY</p>
               </div>
@@ -179,7 +179,7 @@
                   <p>Quantité :</p>
               </div>
               <div class="row">
-                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
+                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier"><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
               </div>
           </div>
       </div>

@@ -180,7 +180,10 @@ margin-bottom: 6%;
     text-decoration: none;
     color: white;
     padding: 5px 40px 5px 40px;
-    border-radius: 7px;
+    border-radius: 7px; 
+}
+.btn_pannier:hover{
+    cursor: pointer;
 }
 .qt{
     width: 50px;

@@ -1,6 +1,7 @@
 <?php 
 require_once 'config.php';
 class user extends database {
+    public $id;
     public $nom;
     public $prenom;
     public $email;
@@ -50,16 +51,17 @@ class user extends database {
         }
     }
     public function update_info($nom,$prenom,$email,$phone,$id) {
+        $this->id=$id;
         $this->nom = $nom;
         $this->prenom = $prenom;
         $this->email = $email;
         $this->phone = $phone;
-        $sql = "UPDATE `user` SET `nom`='".$nom."',`prenom`='".$prenom."',`email`='".$email."',`phone`='".$phone."' WHERE `id_user`='".$id."'";
+        $sql = "UPDATE `user` SET `nom`='".$this->nom."',`prenom`='".$this->prenom."',`email`='".$this->email."',`phone`='".$this->phone."' WHERE `id_user`='".$this->id."'";
         if($this->openConnection()->query($sql)){
-            $_SESSION['nom']=$nom;
-            $_SESSION['prenom']=$prenom;
-            $_SESSION['email']=$email;
-            $_SESSION['phone']=$phone;
+            $_SESSION['nom']=$this->nom;
+            $_SESSION['prenom']=$this->prenom;
+            $_SESSION['email']=$this->email;
+            $_SESSION['phone']=$this->phone;
             header("Location:../user/profile.php?etat=succes");
             exit();
         }
@@ -78,6 +80,14 @@ class user extends database {
         else{
             echo -1;
         }  
+    }
+    public function add_pannier($id_user,$id_prod) {
+        $this->id = $id_user;
+
+        $sql = "INSERT INTO `pannier`(`id_user`, `id_prod`) VALUES (".$this->id.",".$id_prod.")";
+        $this->openConnection()->query($sql);
+        echo 1;
+        
     }
 }
 ?>

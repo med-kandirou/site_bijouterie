@@ -19,3 +19,7 @@ $('#moins').click(function () {
         $('.qt').val(qt);
     }
 });
+
+$('.btn_pannier').click(function () { 
+    location.replace("includes/php/add_pannier.php?id="+num+"");
+});
