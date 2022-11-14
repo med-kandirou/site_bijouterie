@@ -73,15 +73,16 @@
     <div class="row">
         <div class="col-md-6">
             <div class="row">
-                <img src="assets/images/i-1.png" style="display: block;margin-left: auto;margin-right: auto;" alt="">
+                <div class="col-md-10">
+                  <img src="assets/images/i-1.png" style="display: block;margin:auto;">
+                </div> 
             </div>
             <div class="row">
-                <img src="assets/images/i-1.png" class="col-md-3" alt="">
-                <img src="assets/images/i-1.png" class="col-md-3" alt="">
-                <img src="assets/images/i-1.png" class="col-md-3" alt="">  
+                <img src="assets/images/i-1.png" class="col-md-3 img">
+                <img src="assets/images/i-1.png" class="col-md-3 img">
+                <img src="assets/images/i-1.png" class="col-md-3 img">  
             </div>
         </div>
-
         <div class="col-md-6">
             <div class="row title-comp">
                 <p>DHAYBY COMPANY</p>
@@ -99,11 +100,12 @@
                 <p>Quantité :</p>
             </div>
             <div class="row">
-              <img src="assets/images/icon-minus.svg" class="nbr-qt" width="20" height="8" alt="min">&nbsp;<input type="number" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
+              <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="btn_pannier"><img src="assets/images/icon-cart.svg" alt="pannier"> Ajouter au pannier</a>
             </div>
         </div>
     </div>
   </div>
+
   <!-- info section -->
   <section class="info_section ">
     <div class="container">
@@ -201,6 +203,7 @@
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="assets/js/custom.js"></script>
+  <script type="text/javascript" src="assets/js/achat.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>

@@ -184,10 +184,15 @@ margin-bottom: 6%;
 }
 .qt{
     width: 50px;
-    background-color: white;
-    border-radius: 8px; 
+    text-align: center;
 }
 .nbr-qt{
     display: block;
     margin: auto;
+}
+
+.img{
+    border: 1px solid #F9B233;
+    border-radius: 10px;
+    margin-right: 5px;
 }
