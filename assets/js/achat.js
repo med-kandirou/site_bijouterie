@@ -2,7 +2,7 @@ var boxs=document.querySelectorAll(".box");
 boxs.forEach((box)=>{
     box.addEventListener('click',function(){
         var num=box.getAttribute('num');
-        location.replace("./achat.php?id="+num+"");
+        location.replace("achat.php?id="+num+"");
     })
 })
 
@@ -22,7 +22,6 @@ $('#moins').click(function () {
 
 $('.btn_pannier').click(function () { 
     var num=this.getAttribute('num');
-   
 
     $.post("./includes/php/add_pannier.php",{id:num},
         function (data) {
@@ -38,8 +37,6 @@ $('.btn_pannier').click(function () {
                 }).then(()=>{
                     location.replace("./connect.php");
                 })
-
-               
             } 
             else{
                 const Toast = Swal.mixin({
