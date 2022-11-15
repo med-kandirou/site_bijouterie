@@ -12,7 +12,7 @@ try{
     $p->inscrire($nom,$prenom,$email,$phone,$mdp);
 }
 catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo $e->getMessage();
 }
 
 

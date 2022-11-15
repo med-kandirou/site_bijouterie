@@ -85,16 +85,17 @@ $(document).ready(function () {
                                 if(code==data){
                                     $.post("./includes/php/inscrire.php",{nom:$("#nom").val(),prenom:$("#prenom").val(),email:$("#email").val(),phone:$("#phone").val(),mdp:$("#mdp").val()},
                                         function (response) {
-                                            if(response==1){
-                                                Swal.fire(
-                                                    'Succes!',
-                                                    'Compte a été crée !',
-                                                    'success'
-                                                )      
-                                                setTimeout(()=>{
-                                                    window.location.href="./connect.php";
-                                                },2000);    
-                                            }
+                                            // if(response==1){
+                                            //     Swal.fire(
+                                            //         'Succes!',
+                                            //         'Compte a été crée !',
+                                            //         'success'
+                                            //     )      
+                                            //     setTimeout(()=>{
+                                            //         window.location.href="./connect.php";
+                                            //     },2000);    
+                                            // }
+                                            console.log(response);
                                         },
                                     )
                                 }

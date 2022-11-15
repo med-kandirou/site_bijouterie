@@ -12,8 +12,17 @@ class user extends database {
 
     public function inscrire($nom,$prenom,$email,$phone,$mdp) {
         $hashed_pass=password_hash($mdp,PASSWORD_DEFAULT);
-        $sql = "INSERT INTO `user`(`nom`, `prenom`, `email`,`phone`,`password`, `role`) VALUES ('".$nom."','".$prenom."','".$email."','".$phone."','".$hashed_pass."',1)";
-        $this->openConnection()->query($sql);
+        $sql = "INSERT INTO `user`(`nom`, `prenom`, `email`,`phone`,`password`, `role`) VALUES (:nom,:prenom,:email,:phone,:mdp,:rolee)";
+        $role=1;
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':prenom', $prenom);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':mdp', $hashed_pass);
+        $stmt->bindParam(':rolee', $role);
+
+        $stmt->execute();
         echo 1; 
     }
 
@@ -45,8 +54,15 @@ class user extends database {
     }
     public function update_info($nom,$prenom,$email,$phone,$id) {
 
-        $sql = "UPDATE `user` SET `nom`='".$nom."',`prenom`='".$prenom."',`email`='".$email."',`phone`='".$phone."' WHERE `id_user`='".$id."'";
-        if($this->openConnection()->query($sql)){
+        $sql = "UPDATE `user` SET `nom`=:nom,`prenom`=:prenom,`email`=:email,`phone`=:phone WHERE `id_user`=:id";
+
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':nom', $nom);
+        $stmt->bindParam(':prenom', $prenom);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':phone', $phone);
+        $stmt->bindParam(':id', $id);
+        if($stmt->execute()){
             $_SESSION['nom']=$nom;
             $_SESSION['prenom']=$prenom;
             $_SESSION['email']=$email;
@@ -60,20 +76,30 @@ class user extends database {
         if(password_verify($mdp,$_SESSION['pass']))
         {
             $hashed_pass=password_hash($newmdp,PASSWORD_DEFAULT);
-            $sql = "UPDATE `user` SET `password`='".$hashed_pass."' WHERE  `id_user`='".$_SESSION['id_user']."'";
-            if($this->openConnection()->query($sql)){
-                $_SESSION['pass']=$hashed_pass;
-                echo 1;
-            }  
+            $sql = "UPDATE `user` SET `password`=:mdp WHERE `id_user`=:id";
+            $stmt=$this->openConnection()->prepare($sql);
+            $stmt->bindParam(':mdp', $hashed_pass);
+            $stmt->bindParam(':id', $_SESSION['id_user']);
+            $_SESSION['pass']=$hashed_pass;
+            $stmt->execute();
+
+            echo 1;
         }
         else{
             echo -1;
         }  
     }
     public function add_pannier($id_user,$id_prod) {
-        $sql = "INSERT INTO `pannier`(`id_user`, `id_prod`) VALUES (".$id_user.",".$id_prod.")";
-        $this->openConnection()->query($sql);
-        return 1;
+        $sql = "INSERT INTO `pannier`(`id_user`, `id_prod`) VALUES (:id_user,:id_prod)";
+
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->bindParam(':id_prod', $id_prod);
+
+        if($stmt->execute()){
+            return 1;
+        }
+
     }
 }
 ?>
