@@ -1,9 +1,19 @@
+//achat sans login
 var boxs=document.querySelectorAll(".box");
 boxs.forEach((box)=>{
     box.addEventListener('click',function(){
         var num=box.getAttribute('num');
         location.replace("achat.php?id="+num+"");
     })
+})
+//achat avec login
+var boxs2=document.querySelectorAll(".box2");
+boxs2.forEach((box)=>{
+    // box.addEventListener('click',function(){
+    //     var num=box.getAttribute('num');
+    //     location.replace("../../achat.php?id="+num+"");
+    // })
+    alert("connect");
 })
 
 let qt=1; //quantite
