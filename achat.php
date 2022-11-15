@@ -91,7 +91,7 @@
                 <p>Quantité :</p>
               </div>
               <div class="row">
-                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier"><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
+                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
               </div>
           </div>
       </div>
@@ -179,7 +179,7 @@
                   <p>Quantité :</p>
               </div>
               <div class="row">
-                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier"><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
+                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
               </div>
           </div>
       </div>

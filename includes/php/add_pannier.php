@@ -3,11 +3,12 @@ require_once '../classes/config.php';
 
 if(isset($_SESSION['id_user'])==false)
 {
-    header("location:../../connect.php");
-    exit();
+    echo 'disconnect';
 }else{
     $user= new user();
-    $user->add_pannier($_SESSION['id_user'],$GET['id']);
+    if($user->add_pannier($_SESSION['id_user'],$_GET['id'])==1){
+        echo 'coonect';
+    };
 }
 
 
