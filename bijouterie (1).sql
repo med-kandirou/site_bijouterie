@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 12 nov. 2022 à 11:51
--- Version du serveur : 10.4.24-MariaDB
--- Version de PHP : 8.1.6
+-- Généré le : mar. 15 nov. 2022 à 16:04
+-- Version du serveur : 10.4.25-MariaDB
+-- Version de PHP : 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -81,9 +81,10 @@ CREATE TABLE `produit` (
   `prix` int(11) NOT NULL,
   `description` longtext NOT NULL,
   `image` varchar(50) NOT NULL,
+  `image1` varchar(25) NOT NULL,
+  `image2` varchar(25) NOT NULL,
   `quantité_stock` int(11) NOT NULL,
-  `rate` int(11) NOT NULL,
-  `nbr_vendre` int(11) NOT NULL,
+  `nbr_vente` int(11) NOT NULL,
   `id_cat` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -91,13 +92,13 @@ CREATE TABLE `produit` (
 -- Déchargement des données de la table `produit`
 --
 
-INSERT INTO `produit` (`id_produit`, `nom_prod`, `prix`, `description`, `image`, `quantité_stock`, `rate`, `nbr_vendre`, `id_cat`) VALUES
-(14, 'bracelet', 100, 'LOREM', 'i-3.png', 50, 5, 3, 1),
-(15, 'bracelet 2', 100, 'LOREM', 'i-2.png', 50, 5, 3, 1),
-(16, 'bracelet 3', 100, 'LOREM', 'i-1.png', 50, 5, 3, 1),
-(17, 'bracelet 4', 300, 'LOREM', 'i-1.png', 50, 5, 3, 1),
-(18, 'bracelet 5', 500, 'LOREM', 'i-3.png', 50, 5, 3, 1),
-(19, 'bracelet 6', 600, 'LOREM', 'i-1.png', 50, 5, 3, 1);
+INSERT INTO `produit` (`id_produit`, `nom_prod`, `prix`, `description`, `image`, `image1`, `image2`, `quantité_stock`, `nbr_vente`, `id_cat`) VALUES
+(14, 'bracelet', 100, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga unde nulla vel nostrum, neque libero sint magni, sequi ad qui molestiae', 'i-3.png', 'i-3.png', 'i-3.png', 50, 3, 1),
+(15, 'bracelet 2', 100, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga unde nulla vel nostrum, neque libero sint magni, sequi ad qui molestiae', 'i-2.png', 'i-2.png', 'i-2.png', 50, 3, 1),
+(16, 'bracelet 3', 100, 'LOREMLorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga unde nulla vel nostrum, neque libero sint magni, sequi ad qui molestiae', 'i-1.png', 'i-1.png', 'i-1.png', 50, 3, 1),
+(17, 'bracelet 4', 300, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga unde nulla vel nostrum, neque libero sint magni, sequi ad qui molestiae', 'ring-img.jpg', 'ring-img.jpg', 'ring-img.jpg', 50, 3, 1),
+(18, 'bracelet 5', 500, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga unde nulla vel nostrum, neque libero sint magni, sequi ad qui molestiae', 'i-3.png', '', '', 50, 3, 1),
+(19, 'bracelet 6', 600, 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat fuga unde nulla vel nostrum, neque libero sint magni, sequi ad qui molestiae', 'i-1.png', '', '', 50, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -120,9 +121,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nom`, `prenom`, `email`, `phone`, `password`, `role`) VALUES
-(29, 'dd', 'dd', 'sidatnouhi@gmail.com', '0639872239', 'SIMOKN123@', 1),
-(30, 'alae', 'el oula', 'alaaeloula@gmail.com', '0639872239', 'SIMOKN123@', 1),
-(31, 'KANDIROU', 'KANDIROU2', 'simo.kandirou15@gmail.com', '0639872239', '$2y$10$Z6ePIIqNbHs1Yy1P9At3Se4DoMVwO4j6K9cuWwX7xjVYqLWJQstPC', 1),
+(29, 'dd', 'dd', 'sidatnouhi@gmail.com', '0639872239', '$2y$10$Z6ePIIqNbHs1Yy1P9At3Se4DoMVwO4j6K9cuWwX7xjVYqLWJQstPC', 1),
+(30, 'alae', 'el oula', 'alaaeloula@gmail.com', '0639872239', '$2y$10$Z6ePIIqNbHs1Yy1P9At3Se4DoMVwO4j6K9cuWwX7xjVYqLWJQstPC', 1),
+(31, 'KANDIROU', 'KANDIROU4', 'simo.kandirou15@gmail.com', '0639872236', '$2y$10$Z6ePIIqNbHs1Yy1P9At3Se4DoMVwO4j6K9cuWwX7xjVYqLWJQstPC', 1),
 (32, 'simo', 'simoxxxxx', 'test.tazafghfghfg19@gmail.com', '0639872239', '$2y$10$MpnFAXQ2i1Wbhy.RSAf3iesHWxJSqYiPfyeDZ9RHrO6ghQ60zFtwC', 1);
 
 --
