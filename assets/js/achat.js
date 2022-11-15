@@ -6,7 +6,6 @@ boxs.forEach((box)=>{
     })
 })
 
-
 let qt=1; //quantite
 $('#plus').click(function () { 
     qt++;
