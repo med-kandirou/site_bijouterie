@@ -11,7 +11,7 @@ require_once '../classes/config.php';
 
     if(exist_Email($email)==false){
         $mail = new PHPMailer(true);
-        $_SESSION["code"]=rand(1,100);
+        $_SESSION["code"]=rand(1,10000);
         try {
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through

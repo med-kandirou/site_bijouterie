@@ -72,30 +72,24 @@ $(document).ready(function () {
                             Swal.fire({
                             title: 'Nous vous envoyer le code de confirmation !!',
                             icon: 'question',
-                            input: 'range',
+                            input: 'text',
                             inputLabel: 'Entrer le code ?',
-                            inputAttributes: {
-                                min: 0,
-                                max: 100,
-                                step: 1
-                            },
-                            inputValue: 25
                             }).then((response)=>{
                                code=response.value;
                                 if(code==data){
                                     $.post("./includes/php/inscrire.php",{nom:$("#nom").val(),prenom:$("#prenom").val(),email:$("#email").val(),phone:$("#phone").val(),mdp:$("#mdp").val()},
                                         function (response) {
-                                            // if(response==1){
-                                            //     Swal.fire(
-                                            //         'Succes!',
-                                            //         'Compte a été crée !',
-                                            //         'success'
-                                            //     )      
-                                            //     setTimeout(()=>{
-                                            //         window.location.href="./connect.php";
-                                            //     },2000);    
-                                            // }
-                                            console.log(response);
+                                            if(response==1){
+                                                Swal.fire(
+                                                    'Succes!',
+                                                    'Compte a été crée !',
+                                                    'success'
+                                                )      
+                                                setTimeout(()=>{
+                                                    window.location.href="./connect.php";
+                                                },2000);    
+                                            }
+                                            
                                         },
                                     )
                                 }
