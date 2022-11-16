@@ -1,53 +1,35 @@
-//achat sans login
-var boxs=document.querySelectorAll(".box");
-boxs.forEach((box)=>{
-    box.addEventListener('click',function(){
-        var num=box.getAttribute('num');
-        location.replace("achat.php?id="+num+"");
-    })
-})
-//achat avec login
-var boxs2=document.querySelectorAll(".box2");
-boxs2.forEach((box)=>{
-    // box.addEventListener('click',function(){
-    //     var num=box.getAttribute('num');
-    //     location.replace("../../achat.php?id="+num+"");
-    // })
-    alert("connect");
-})
 
-let qt=1; //quantite
-$('#plus').click(function () { 
+let qt = 1; //quantite
+$('#plus').click(function () {
     qt++;
     $('.qt').val(qt);
 });
 
-$('#moins').click(function () { 
-    if(qt>1){
+$('#moins').click(function () {
+    if (qt > 1) {
         qt--;
         $('.qt').val(qt);
     }
 });
 
-$('.btn_pannier').click(function () { 
-    var num=this.getAttribute('num');
-
-    $.post("./includes/php/add_pannier.php",{id:num},
+$('.btn_pannier').click(function () {
+    var num = this.getAttribute('num');
+    $.post("./includes/php/add_pannier.php", { id: num },
         function (data) {
-            if(data=='disconnect'){
+            if (data == 'disconnect') {
                 Swal.fire({
                     title: 'Merci de vous connecter !',
                     showClass: {
-                      popup: 'animate__animated animate__fadeInDown'
+                        popup: 'animate__animated animate__fadeInDown'
                     },
                     hideClass: {
-                      popup: 'animate__animated animate__fadeOutUp'
+                        popup: 'animate__animated animate__fadeOutUp'
                     }
-                }).then(()=>{
+                }).then(() => {
                     location.replace("./connect.php");
                 })
-            } 
-            else{
+            }
+            else {
                 const Toast = Swal.mixin({
                     toast: true,
                     position: 'top-end',
@@ -55,16 +37,16 @@ $('.btn_pannier').click(function () {
                     timer: 3000,
                     timerProgressBar: true,
                     didOpen: (toast) => {
-                      toast.addEventListener('mouseenter', Swal.stopTimer)
-                      toast.addEventListener('mouseleave', Swal.resumeTimer)
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
                     }
-                  })
-                  
-                  Toast.fire({
+                })
+
+                Toast.fire({
                     icon: 'success',
                     title: 'Produit bien ajoutée'
                 })
-            }           
+            }
         },
     )
 });

@@ -1,8 +1,8 @@
-
 <?php
-  require_once 'includes/classes/config.php';
-  require_once 'header.php';
+require_once 'includes/classes/config.php';
+require_once 'header.php';
 ?>
+
 <body>
   <div class="hero_area">
     <!-- header section strats -->
@@ -41,7 +41,7 @@
       </div>
     </header>
     <!-- end header section -->
-    
+
     <!-- slider section -->
     <section class=" slider_section position-relative">
       <div class="design-box">
@@ -171,27 +171,27 @@
   <div class="item_section layout_padding2">
     <div class="container">
       <div class="item_container">
-      <?php
-        $db=new database();
-        $query="select * from produits";
-        $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `image` FROM `produit` ORDER BY prix LIMIT 3");
-        while ($row = $stmt->fetch()){
+        <?php
+        $db = new database();
+        $query = "select * from produits";
+        $stmt = $db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `image` FROM `produit` ORDER BY prix LIMIT 3");
+        while ($row = $stmt->fetch()) {
           echo '
-          <div class="box" num="'.$row['id_produit'].'">
+          <div class="box" num="' . $row['id_produit'] . '">
           <div class="price">
             <h6>
               Meilleur prix
             </h6>
           </div>
           <div class="img-box">
-            <img src="assets/images/'.$row['image'].'" alt="bijoux">
+            <img src="assets/images/' . $row['image'] . '" alt="bijoux">
           </div>
           <div class="name">
-            <h5>'.$row['nom_prod'].'</h5>
+            <h5>' . $row['nom_prod'] . '</h5>
           </div>
          </div> ';
-      }
-      ?>
+        }
+        ?>
       </div>
     </div>
   </div>
@@ -248,33 +248,33 @@
       </div>
       <div class="price_container">
 
-      <?php
-        $db=new database();
-        $query="select * from produits";
-        $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`,`prix`, `image` FROM `produit` ORDER BY prix desc LIMIT 3");
-        while ($row = $stmt->fetch()){
+        <?php
+        $db = new database();
+        $query = "select * from produits";
+        $stmt = $db->openConnection()->query("SELECT `id_produit`, `nom_prod`,`prix`, `image` FROM `produit` ORDER BY prix desc LIMIT 3");
+        while ($row = $stmt->fetch()) {
           echo '
-          <div class="box" num="'.$row['id_produit'].'">
+          <div class="box" num="' . $row['id_produit'] . '">
           <div class="name">
             <h6>
-              '.$row['nom_prod'].'
+              ' . $row['nom_prod'] . '
             </h6>
           </div>
           <div class="img-box">
-            <img src="assets/images/'.$row['image'].'" alt="prod '.$row['id_produit'].'">
+            <img src="assets/images/' . $row['image'] . '" alt="prod ' . $row['id_produit'] . '">
           </div>
           <div class="detail-box">
             <h5>
-              $<span>'.$row['prix'].'</span>
+              $<span>' . $row['prix'] . '</span>
             </h5>
             <a href="">
               Buy Now
             </a>
           </div>
         </div>';
-      }
-      ?>
-      
+        }
+        ?>
+
   </section>
   <!-- end price section -->
   <!-- ring section -->
@@ -407,10 +407,19 @@
 
     </div>
   </section>
+  <script>
+    var boxs = document.querySelectorAll(".box");
+    boxs.forEach((box) => {
+      box.addEventListener('click', function() {
+        var num = box.getAttribute('num');
+        location.replace("achat.php?id=" + num + "");
+      })
+    })
+  </script>
 
   <!-- end client section -->
 
   <!-- info section -->
   <?php
   require_once 'footer.php';
-   ?>
+  ?>
