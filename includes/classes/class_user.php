@@ -89,12 +89,13 @@ class user extends database {
             echo -1;
         }  
     }
-    public function add_pannier($id_user,$id_prod) {
-        $sql = "INSERT INTO `pannier`(`id_user`, `id_prod`) VALUES (:id_user,:id_prod)";
+    public function add_pannier($id_user,$id_prod,$qt) {
+        $sql = "INSERT INTO `pannier`(`id_user`, `id_prod`,`qantité`) VALUES (:id_user,:id_prod,:qt)";
 
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':id_user', $id_user);
         $stmt->bindParam(':id_prod', $id_prod);
+        $stmt->bindParam(':qt', $qt);
 
         if($stmt->execute()){
             return 1;

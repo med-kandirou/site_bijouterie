@@ -5,10 +5,16 @@ if(isset($_SESSION['id_user'])==false)
 {
     echo 'disconnect';
 }else{
-    $user= new user();
-    if($user->add_pannier($_SESSION['id_user'],$_GET['id'])==1){
-        echo 'coonect';
-    };
+    try{
+        $qt=$_POST['qt'];
+        $user= new user();
+        if($user->add_pannier($_SESSION['id_user'],$_POST['id'],$qt)==1){
+            echo 'insered';
+        };
+    }catch(Exception $e){
+        echo $e->getMessage();
+    }
+
 }
 
 

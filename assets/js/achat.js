@@ -14,7 +14,8 @@ $('#moins').click(function () {
 
 $('.btn_pannier').click(function () {
     var num = this.getAttribute('num');
-    $.post("./includes/php/add_pannier.php", { id: num },
+    var qt=$('.qt').val();
+    $.post("./includes/php/add_pannier.php", {id: num,qt:qt},
         function (data) {
             if (data == 'disconnect') {
                 Swal.fire({
@@ -29,19 +30,18 @@ $('.btn_pannier').click(function () {
                     location.replace("./connect.php");
                 })
             }
-            else {
+            else if(data='insered') {
                 const Toast = Swal.mixin({
                     toast: true,
-                    position: 'top-end',
+                    position: 'bottom-end',
                     showConfirmButton: false,
-                    timer: 3000,
+                    timer: 2000,
                     timerProgressBar: true,
                     didOpen: (toast) => {
                         toast.addEventListener('mouseenter', Swal.stopTimer)
                         toast.addEventListener('mouseleave', Swal.resumeTimer)
                     }
                 })
-
                 Toast.fire({
                     icon: 'success',
                     title: 'Produit bien ajoutée'

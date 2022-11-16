@@ -130,7 +130,7 @@
                     <a class="nav-link" href="includes/user/contact_user.php"> Contact</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Kandirou3</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">'.$_SESSION['prenom'].'</a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                       <li><a class="dropdown-item" href="#">Commandes</a></li>
