@@ -4,7 +4,7 @@
   {
     $id=$_GET['id'];
     $db=new database();
-    $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `prix`, `description`, `image`, `image1`, `image2`,`nbr_vente` FROM `produit` WHERE `id_produit`=".$id."");
+    $stmt=$db->openConnection()->query("SELECT `id_produit`, `nom_prod`, `prix`, `description`, `image`, `image1`, `image2`,`quantité_stock`,`nbr_vente`,`quantité_stock` FROM `produit` WHERE `id_produit`=".$id."");
     while ($row = $stmt->fetch())
     {
       $nom=$row['nom_prod'];
@@ -14,6 +14,7 @@
       $image1=$row['image1'];
       $image2=$row['image2'];
       $nbr_vente=$row['nbr_vente'];
+      $qt=$row['quantité_stock'];
     }
     if (isset($_SESSION['id_user'])==false)
     {
@@ -88,10 +89,10 @@
                   <p>Nombre des ventes :'.$nbr_vente.'</p>
               </div>
               <div class="row title-comp">
-                <p>Quantité :</p>
+                <p>Quantité : '.$qt.'</p>
               </div>
               <div class="row">
-                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
+                <p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
               </div>
           </div>
       </div>
@@ -176,10 +177,10 @@
                   $'.$prix.'
               </div>
               <div class="row title-comp">
-                  <p>Quantité :</p>
+                <p>Quantité : '.$qt.'</p>
               </div>
               <div class="row">
-                <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
+                <p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Ajouter au pannier</p>
               </div>
           </div>
       </div>
