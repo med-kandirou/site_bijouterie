@@ -113,11 +113,13 @@ class user extends database {
         }
     }
     public function acheter_prod($id_user,$id_prod,$qt,$numero,$adresse) {
-        $sql = "";
+        $sql = "INSERT INTO `commande`(`id_user`, `id_produit`, `date_demmande`, `quantité`, `numero`, `adresse`, `etat`) VALUES (:id_user,:id_prod,'".date("Y/m/d")."',:qt,:num,:adresse,1)";
         $stmt=$this->openConnection()->prepare($sql);
         $stmt->bindParam(':id_user', $id_user);
         $stmt->bindParam(':id_prod', $id_prod);
-
+        $stmt->bindParam(':qt', $qt);
+        $stmt->bindParam(':num', $numero);
+        $stmt->bindParam(':adresse', $adresse);
         if($stmt->execute()){
             return 1;
         }
