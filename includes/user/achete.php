@@ -98,7 +98,7 @@ if(isset($_GET['id'])==true)
                 <p>Quantité :<?php echo $qt;?> </p>
               </div>
               <div class="row">
-                <p class="btn_achter" num='<?php echo $id;?>'><img src="../../assets/images/icon-cart.svg"> Acheter le produit</p>
+                <p class="btn_acheter" num='<?php echo $id;?>'><img src="../../assets/images/icon-cart.svg"> Acheter le produit</p>
               </div>
           </div>
       </div>

@@ -175,7 +175,14 @@ margin-bottom: 6%;
     text-align: justify;
     line-height:2em;
 }
-.btn_pannier , .btn_achter{
+.btn_pannier {
+    background-color: #F9B233;
+    text-decoration: none;
+    color: white;
+    padding: 5px 40px 5px 40px;
+    border-radius: 7px; 
+}
+.btn_acheter{
     background-color: #F9B233;
     text-decoration: none;
     color: white;

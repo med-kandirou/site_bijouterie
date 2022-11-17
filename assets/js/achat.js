@@ -93,7 +93,11 @@ prods_achete.forEach(prod => {
     });
 });
 
-$().$
-$('.btn_achter').click(function () { 
-    location.replace("../../includes/user/info.php?id="+id+"");
+
+$('.btn_acheter').click(function () { 
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+      });
+      let value = params.id; // "some_value"
+     location.replace("../../includes/user/info.php?id="+value+"");
 });
