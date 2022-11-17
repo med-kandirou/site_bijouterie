@@ -37,23 +37,23 @@ if(isset($_GET['id'])==true)
               <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
                 <ul class="navbar-nav  ">
                   <li class="nav-item active">
-                    <a class="nav-link" href="includes/user/index.php">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="includes/user/about_user.php"> About</a>
+                    <a class="nav-link" href="about_user.php"> About</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="includes/user/gallery_user.php"> Gallery</a>
+                    <a class="nav-link" href="gallery_user.php"> Gallery</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="includes/user/contact_user.php"> Contact</a>
+                    <a class="nav-link" href="contact_user.php"> Contact</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><?php echo $_SESSION['prenom'] ?></a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="includes/user/profile.php">Profile</a></li>
+                      <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                       <li><a class="dropdown-item" href="#">Commandes</a></li>
-                      <li><a class="dropdown-item" href="#">Pannier</a></li>
+                      <li><a class="dropdown-item" href="pannier.php">Pannier</a></li>
                       <hr>
                       <li><a class="dropdown-item" href="includes/user/deconnecter.php">Déconnecter</a></li>
                     </ul>
@@ -98,7 +98,7 @@ if(isset($_GET['id'])==true)
                 <p>Quantité :<?php echo $qt;?> </p>
               </div>
               <div class="row">
-              <img src="../../assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="../../assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="../../assets/images/icon-cart.svg"> Acheter</p>
+              <img src="../../assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="../../assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="../../assets/images/icon-cart.svg"> Acheter le produit</p>
               </div>
           </div>
       </div>
