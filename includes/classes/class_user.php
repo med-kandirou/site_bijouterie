@@ -112,5 +112,15 @@ class user extends database {
             return 1;
         }
     }
+    public function acheter_prod($id_user,$id_prod,$qt,$numero,$adresse) {
+        $sql = "";
+        $stmt=$this->openConnection()->prepare($sql);
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->bindParam(':id_prod', $id_prod);
+
+        if($stmt->execute()){
+            return 1;
+        }
+    }
 }
 ?>

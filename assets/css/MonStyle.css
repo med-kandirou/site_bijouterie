@@ -175,7 +175,7 @@ margin-bottom: 6%;
     text-align: justify;
     line-height:2em;
 }
-.btn_pannier{
+.btn_pannier , .btn_achter{
     background-color: #F9B233;
     text-decoration: none;
     color: white;

@@ -55,7 +55,7 @@ if(isset($_GET['id'])==true)
                       <li><a class="dropdown-item" href="#">Commandes</a></li>
                       <li><a class="dropdown-item" href="pannier.php">Pannier</a></li>
                       <hr>
-                      <li><a class="dropdown-item" href="includes/user/deconnecter.php">Déconnecter</a></li>
+                      <li><a class="dropdown-item" href="deconnecter.php">Déconnecter</a></li>
                     </ul>
                   </li> 
                 </ul>
@@ -66,7 +66,7 @@ if(isset($_GET['id'])==true)
   </header>
   </div>
   
-  <h2 id="title">Fiche de produit</h2>
+  <h2 id="title">Poursuivre la commande</h2>
     <div class="container fiche">
       <div class="row">
           <div class="col-md-6">
@@ -98,7 +98,7 @@ if(isset($_GET['id'])==true)
                 <p>Quantité :<?php echo $qt;?> </p>
               </div>
               <div class="row">
-              <img src="../../assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="../../assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="../../assets/images/icon-cart.svg"> Acheter le produit</p>
+                <p class="btn_achter" num='<?php echo $id;?>'><img src="../../assets/images/icon-cart.svg"> Acheter le produit</p>
               </div>
           </div>
       </div>

@@ -92,3 +92,8 @@ prods_achete.forEach(prod => {
         location.replace("../../includes/user/achete.php?id="+id+"");     
     });
 });
+
+$().$
+$('.btn_achter').click(function () { 
+    location.replace("../../includes/user/info.php?id="+id+"");
+});
