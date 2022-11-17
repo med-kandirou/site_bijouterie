@@ -28,7 +28,7 @@ if(isset($_GET['id'])==true)
         <div class="container-fluid">
           <nav class="navbar navbar-expand-lg custom_nav-container ">
             <a class="navbar-brand" href="index.html">
-              <img src="assets/images/logo.png" alt="logo de site">
+              <img src="../../assets/images/logo.png" alt="logo de site">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -49,7 +49,7 @@ if(isset($_GET['id'])==true)
                     <a class="nav-link" href="includes/user/contact_user.php"> Contact</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">'.$_SESSION['prenom'].'</a>
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"><?php echo $_SESSION['prenom'] ?></a>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="includes/user/profile.php">Profile</a></li>
                       <li><a class="dropdown-item" href="#">Commandes</a></li>
@@ -72,13 +72,13 @@ if(isset($_GET['id'])==true)
           <div class="col-md-6">
               <div class="row">
                   <div class="col-md-10">
-                    <img src="assets/images/'.$image.'" style="display: block;margin:auto;">
+                    <img src="../../assets/images/<?php echo $image?>" style="display: block;margin:auto;">
                   </div> 
               </div>
-              <div class="row">
-              <img src="assets/images/'.$image.'" class="col-md-3 img">
-              <img src="assets/images/'.$image1.'" class="col-md-3 img">
-              <img src="assets/images/'.$image2.'" class="col-md-3 img">  
+              <div class="row mt-4">
+              <img src="../../assets/images/<?php echo $image?>" class="col-md-3 img">
+              <img src="../../assets/images/<?php echo $image1?>" class="col-md-3 img">
+              <img src="../../assets/images/<?php echo $image2?>" class="col-md-3 img">  
               </div>
           </div>
           <div class="col-md-6 mt-5">
@@ -92,13 +92,13 @@ if(isset($_GET['id'])==true)
                   <p><?php echo $desc ?></p>
               </div>
               <div class="row prix-prod">
-              <?php echo $prix ?>
+                $<?php echo $prix ?>
               </div>
               <div class="row title-comp">
-                <p><?php echo $qt;?></p>
+                <p>Quantité :<?php echo $qt;?> </p>
               </div>
               <div class="row">
-              <img src="assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="assets/images/icon-cart.svg"> Acheter</p>
+              <img src="../../assets/images/icon-minus.svg" class="nbr-qt" id="moins" width="20" height="8" alt="min">&nbsp;<input type="text" value="1" class="qt" disabled>&nbsp;<img src="../../assets/images/icon-plus.svg" width="20" height="20" class="nbr-qt" id="plus" alt="max">&nbsp;&nbsp;&nbsp;&nbsp;<p class="btn_pannier" num='.$id.'><img src="../../assets/images/icon-cart.svg"> Acheter</p>
               </div>
           </div>
       </div>

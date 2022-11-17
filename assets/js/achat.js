@@ -89,8 +89,6 @@ var prods_achete=document.querySelectorAll('.achete');
 prods_achete.forEach(prod => {
     prod.addEventListener('click',function(){
         let id=prod.value;
-
-       
-        
+        location.replace("../../includes/user/achete.php?id="+id+"");     
     });
 });
