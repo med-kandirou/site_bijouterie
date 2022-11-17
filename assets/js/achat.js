@@ -14,8 +14,7 @@ $('#moins').click(function () {
 
 $('.btn_pannier').click(function () {
     var num = this.getAttribute('num');
-    var qt=$('.qt').val();
-    $.post("./includes/php/add_pannier.php", {id: num,qt:qt},
+    $.post("./includes/php/add_pannier.php", {id: num},
         function (data) {
             if (data == 'disconnect') {
                 Swal.fire({
@@ -49,4 +48,38 @@ $('.btn_pannier').click(function () {
             }
         },
     )
+});
+
+//code pannier delete
+var prods_delete=document.querySelectorAll('.delete');
+prods_delete.forEach(prod => {
+    prod.addEventListener('click',function(){
+        let id=prod.value;
+
+        $.post("../../includes/php/delete_prod.php", {id: id},
+        function (data) {
+            if(data=="deleted"){
+                const Toast = Swal.mixin({
+                    toast: true,
+                    position: 'bottom-end',
+                    showConfirmButton: false,
+                    timer: 2000,
+                    timerProgressBar: true,
+                    didOpen: (toast) => {
+                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
+                })
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Produit supprimé de panier'
+                })
+                setTimeout(function(){
+                    location.replace("../../includes/user/pannier.php");
+                },1000)
+
+            }
+        })
+
+    });
 });

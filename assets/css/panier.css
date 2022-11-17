@@ -1,0 +1,39 @@
+.row{
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.prod{
+    border: 1px solid #F9B233;
+    text-align: center;
+    padding: 20px;
+}
+
+.prod .info img{
+    height: 200px;
+    width: 200px;
+}
+
+.prod .info p{
+    color: black;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.prod .info p i{
+    color: #F9B233;
+
+}
+
+.prod .info .prix{
+    margin-top: 25px;
+}
+
+.prod .info .achete{
+    margin-top: 25px;
+}
+.prod:hover{
+    margin-top: 10px;
+    margin-left: 10px ;
+    box-shadow: 9px 9px 0px -2px #F9B233;
+}

@@ -31,6 +31,5 @@ require_once '../classes/config.php';
   <link href="../../assets/css/MonStyle.css" rel="stylesheet"/>
   <!-- responsive style -->
   <link href="../../assets/css/responsive.css" rel="stylesheet"/>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
